@@ -6,6 +6,8 @@ from src.logger import logger
 weather_api_key = os.getenv("weather_api_key", "")
 if weather_api_key == "":
     logger.info("weather_api_key not found")
+    logger.info("App will use a temp weather_api_key")
+    weather_api_key = "e8b64c1cd9724aee8b2101826232111"
 
 
 def get_weather_now(city: str, lang="en", key=weather_api_key):
