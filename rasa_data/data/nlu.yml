@@ -4,255 +4,170 @@ version: "3.1"
 # Items that can be added under this key are:
 # Training examples // Synonyms // Regular expressions // Lookup tables
 nlu:
-- intent: greet
-  examples: |
-    - Hi!
-    - Hello there!
-    - Good morning, how can I help?
-    - Hey, what's up?
-    - Greetings!
-    - Hi, what can you do?
-    - Hello, it's nice to see you!
-    - Hi, how are you doing today?
-    - Good day!
-    - Greetings, how can I assist you?
+  - intent: greet
+    examples: |
+      - Hi!
+      - Hello there!
+      - Good morning, how can I help?
+      - Hey, what's up?
+      - Greetings!
+      - Hi, what can you do?
+      - Hello, it's nice to see you!
+      - Hi, how are you doing today?
+      - Good day!
+      - Greetings, how can I assist you?
+      - hey
+      - hello
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
 
-- intent: goodbye
-  examples: |
-    - Goodbye, take care!
-    - See you later!
-    - Bye for now, have a great day!
-    - Farewell!
-    - Until we meet again, goodbye!
-    - Take care, bye!
-    - Bye, it was nice talking to you!
-    - Have a good one!
-    - So long!
-    - Catch you later!
+  - intent: goodbye
+    examples: |
+      - Goodbye, take care!
+      - See you later!
+      - Bye for now, have a great day!
+      - Farewell!
+      - Until we meet again, goodbye!
+      - Take care, bye!
+      - Bye, it was nice talking to you!
+      - Have a good one!
+      - So long!
+      - Catch you later!
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
 
-- intent: get_realtime_weather
-  examples: |
-    - What's the weather like in [Paris](location) right now?
-    - What's the weather like in [Seoul](location) right now?
-    - Tell me the current temperature in [Tokyo](location).
-    - Tell me the current temperature in [Chicago](location).
-    - What's the forecast for [Sydney](location) today?
-    - What's the forecast for [Los Angeles](location) today?
-    - Can you give me the weather report for [Chicago](location)?
-    - Can you give me the weather report for [Tokyo](location)?
-    - I'm curious about the weather in [Beijing](location).
-    - I'm curious about the weather in [Los Angeles](location).
-    - How's the weather looking in [Berlin](location) at the moment?
-    - How's the weather looking in [Sydney](location) at the moment?
-    - Tell me about the conditions in [Sydney](location).
-    - Tell me about the conditions in [Berlin](location).
-    - What can you tell me about the weather in [Rome](location)?
-    - What can you tell me about the weather in [Mumbai](location)?
-    - How's the climate in [Berlin](location)?
-    - How's the climate in [Mumbai](location)?
-    - Describe the weather in [Seoul](location) today.
-    - Describe the weather in [Paris](location) today.
-    
+  - intent: get_weather_realtime
+    examples: |
+      - What's the weather like in [Paris](location) [right now](time)?
+      - What's the weather like in [Seoul](location) [right now](time)?
+      - Tell me the current temperature in [Tokyo](location).
+      - Tell me the current temperature in [Chicago](location).
+      - What's the forecast for [Sydney](location) [today](time)?
+      - What's the forecast for [Los Angeles](location) [today](time)?
+      - Can you give me the weather report for [Chicago](location)?
+      - Can you give me the weather report for [Tokyo](location)?
+      - I'm curious about the weather in [Beijing](location).
+      - I'm curious about the weather in [Los Angeles](location).
+      - How's the weather looking in [Berlin](location) [at the moment](time)?
+      - How's the weather looking in [Sydney](location) [at the moment](time)?
+      - Tell me about the conditions in [Sydney](location).
+      - Tell me about the conditions in [Berlin](location).
+      - What can you tell me about the weather in [Rome](location)?
+      - What can you tell me about the weather in [Mumbai](location)?
+      - How's the climate in [Berlin](location)?
+      - How's the climate in [Mumbai](location)?
+      - Describe the weather in [Seoul](location) [today](time).
+      - Describe the weather in [Paris](location) [today](time).
 
-- intent: get_forecast_weather
-  examples: |
-    - What's the forecast for the next seven days in [New York](location)?
-    - What's the forecast for the next seven days in [London](location)?
-    - Tell me about the weather outlook for the coming week in [Mumbai](location).
-    - Tell me about the weather outlook for the coming week in [London](location).
-    - Can you provide the forecast for the next three days in [San Francisco](location)?
-    - Can you provide the forecast for the next three days in [Mumbai](location)?
-    - What's the weather expected to be like in [London](location) over the weekend?
-    - What's the weather expected to be like in [Tokyo](location) over the weekend?
-    - Give me a preview of the weather for the next five days in [London](location).
-    - Give me a preview of the weather for the next five days in [Sydney](location).
-    - What's the forecast like for [San Francisco](location) in the upcoming days?
-    - What's the forecast like for [Chicago](location) in the upcoming days?
-    - Can you tell me about the weather trends for the next week in [Paris](location)?
-    - Can you tell me about the weather trends for the next week in [New York](location)?
-    - Describe the expected conditions for the next four days in [Beijing](location).
-    - Describe the expected conditions for the next four days in [New York](location).
-    - What's the outlook for the weather in [Rome](location) in the coming days?
-    - What's the outlook for the weather in [New York](location) in the coming days?
-    - Provide a forecast for the next six days in [London](location).
-    - Provide a forecast for the next six days in [Mumbai](location).
+  - intent: get_weather_forecast
+    examples: |
+      - What's the forecast for the [next seven days](time) in [New York](location)?
+      - What's the forecast for the [next week](time) in [London](location)?
+      - Tell me about the weather outlook for the [coming week](time) in [Mumbai](location).
+      - Tell me about the weather outlook for the [coming days](time) in [London](location).
+      - Can you provide the forecast for the [next three days](time) in [San Francisco](location)?
+      - Can you provide the forecast for the [next seven days](time) in [Mumbai](location)?
+      - What's the weather expected to be like in [London](location) [over the weekend](time)?
+      - What's the weather expected to be like in [Tokyo](location) [over the weekend](time)?
+      - Give me a preview of the weather for the [next 3 days](time) in [London](location).
+      - Give me a preview of the weather for the [next five days](time) in [Sydney](location).
+      - What's the forecast like for [San Francisco](location) in the [upcoming days](time)?
+      - What's the forecast like for [Chicago](location) in the [upcoming week](time)?
+      - Can you tell me about the weather trends for the [next month](time) in [Paris](location)?
+      - Can you tell me about the weather trends for the [next week](time) in [New York](location)?
+      - Describe the expected conditions for the [next six days](time) in [Beijing](location).
+      - Describe the expected conditions for the [next four days](time) in [New York](location).
+      - What's the outlook for the weather in [Rome](location) in the [coming days](time)?
+      - What's the outlook for the weather in [New York](location) in the [coming week](time)?
+      - Provide a forecast for the [next six days](time) in [London](location).
+      - Provide a forecast for the [next 2 days](time) in [Mumbai](location).
 
-- intent: location
-  examples: |
-    - How's the weather in [Amsterdam](location)?
-    - How's the weather in [Jakarta](location)?
-    - Tell me about the conditions in [Buenos Aires](location).
-    - Tell me about the conditions in [Amsterdam](location).
-    - What's the weather like in [Cape Town](location)?
-    - What's the weather like in [Buenos Aires](location)?
-    - Can you provide information about the weather in [Cape Town](location)?
-    - Can you provide information about the weather in [Dubai](location)?
-    - What can you tell me about the weather in [Cape Town](location)?
-    - What can you tell me about the weather in [Edinburgh](location)?
-    - Describe the climate in [Edinburgh](location).
-    - Describe the climate in [Frankfurt](location).
-    - How's the weather looking in [Geneva](location)?
-    - How's the weather looking in [Frankfurt](location)?
-    - Tell me about the conditions in [Havana](location).
-    - Tell me about the conditions in [Edinburgh](location).
-    - What's the weather like in [Istanbul](location)?
-    - What's the weather like in [Havana](location)?
-    - Provide information about the weather in [Jakarta](location).
-    - Provide information about the weather in [Havana](location).
+  - intent: get_weather_history
+    examples: |
+      - What was the weather like in [New York](location) [2 weeks ago](time)?
+      - What was the weather like in [New York](location) [last week](time)?
+      - Can you tell me about the weather in [Paris](location) on [June 2nd, 2022](time)?
+      - Can you tell me about the weather in [Paris](location) on [June 1st, 2022](time)?
+      - Describe the climate in [Los Angeles](location) during [November 2022](time).
+      - Describe the climate in [Los Angeles](location) during [December 2021](time).
+      - What were the weather conditions in [Tokyo](location) on [Feb 17th](time)?
+      - What were the weather conditions in [Tokyo](location) on [January 15th](time)?
+      - Tell me about the temperature in [London](location) [2 months ago](time).
+      - Tell me about the temperature in [London](location) [last month](time).
+      - Was it rainy in [Sydney](location) [three days ago](time)?
+      - Was it rainy in [Sydney](location) [4 days ago](time)?
+      - What was the weather report for [Berlin](location) on [April 10, 2021](time)?
+      - What was the weather report for [Berlin](location) on [March 5, 2022](time)?
+      - Can you provide historical weather data for [Mumbai](location)?
+      - Can you provide historical weather data for [Mumbai](location)?
+      - Describe the climate in [Seoul](location) on [October 12, 2021](time).
+      - Describe the climate in [Seoul](location) on [June 10, 2021](time).
+      - What were the weather conditions in [Beijing](location) [2 days ago](time)?
+      - What were the weather conditions in [Beijing](location) [yesterday](time)?
 
-- intent: time
-  examples: |
-    - What's the current weather?
-    - Tell me about the conditions right now.
-    - How's the weather at this moment?
-    - What's the temperature currently?
-    - Give me the latest weather update.
-    - Tell me about the weather conditions currently.
-    - What's the weather like as of now?
-    - Provide the current temperature.
-    - How's it looking outside right now?
-    - What's the current climate?
+  - intent: thanks
+    examples: |
+      - Thanks for the weather info!
+      - Thank you for your help.
+      - I appreciate the weather details.
+      - Thanks a bunch!
+      - Thank you, that was helpful.
+      - I'm grateful for the information.
+      - Thanks a million!
+      - Appreciate your assistance.
+      - Thanks a ton!
+      - Thank you so much!
 
-- intent: thanks
-  examples: |
-    - Thanks for the weather info!
-    - Thank you for your help.
-    - I appreciate the weather details.
-    - Thanks a bunch!
-    - Thank you, that was helpful.
-    - I'm grateful for the information.
-    - Thanks a million!
-    - Appreciate your assistance.
-    - Thanks a ton!
-    - Thank you so much!
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+      - Can you tell me a joke about quantum physics?
+      - Calculate the square root of pi to 10 decimal places.
+      - What's the meaning of life, the universe, and everything?
+      - Perform a complex mathematical integration for me.
+      - Explain the concept of Schrödinger's cat.
+      - Provide a detailed critique of a famous painting.
+      - Write a poem about artificial intelligence.
+      - Tell me a story in reverse chronological order.
+      - Convince me that time travel is possible.
+      - Explain the Monty Hall problem and its solution.
+      - Sing me a song in a language you just invented.
+      - What's the most obscure fact you know?
+      - Can you solve a Rubik's Cube in under a minute?
+      - Create a fictional recipe using random ingredients.
+      - Debate the pros and cons of teleportation.
+      - Translate this sentence into Klingon.
+      - Share a conspiracy theory you find interesting.
+      - Write a haiku about the concept of entropy.
+      - Recite a tongue twister in reverse.
+      - What's your opinion on the existence of extraterrestrial life?
 
-- intent: confused
-  examples: |
-    - I'm a bit confused, can you clarify?
-    - I didn't understand that, could you explain again?
-    - I'm not sure what you mean, can you elaborate?
-    - It's not clear to me, can you provide more information?
-    - I'm confused, could you simplify that?
-    - I didn't get that, could you rephrase?
-    - I'm a bit lost, can you help me understand?
-    - I'm having trouble understanding, can you clarify?
-    - I'm not sure I follow, can you explain once more?
-    - I'm confused, can you break it down for me?
-
-- intent: help
-  examples: |
-    - How can you assist me?
-    - What services do you offer?
-    - Can you help me with something?
-    - What are your capabilities?
-    - I need some assistance, can you help?
-    - What can you do to help me?
-    - I require help, what can you provide?
-    - Can you guide me on how to use your features?
-    - I'm looking for some help, where should I start?
-    - How can I get support from you?
-
-# - intent: Joke
-#   examples: |
-#     - Tell me a weather-related joke to brighten my day.
-#     - Share a funny weather anecdote.
-#     - I could use a laugh, give me a weather joke.
-#     - Make me smile with a weather-related joke.
-#     - How about a lighthearted weather humor?
-#     - Entertain me with a weather joke.
-#     - Bring on the laughter with a weather-related joke.
-#     - I'm in the mood for a joke, especially if it's about weather!
-#     - Can you tell me a joke that involves the weather?
-#     - Lighten the mood with a weather-related joke.
-
-# version: "3.1"
-
-# nlu:
-# - intent: greet
-#   examples: |
-#     - hey
-#     - hello
-#     - hi
-#     - hello there
-#     - good morning
-#     - good evening
-#     - moin
-#     - hey there
-#     - let's go
-#     - hey dude
-#     - goodmorning
-#     - goodevening
-#     - good afternoon
-
-# - intent: goodbye
-#   examples: |
-#     - cu
-#     - good by
-#     - cee you later
-#     - good night
-#     - bye
-#     - goodbye
-#     - have a nice day
-#     - see you around
-#     - bye bye
-#     - see you later
-
-# - intent: affirm
-#   examples: |
-#     - yes
-#     - y
-#     - indeed
-#     - of course
-#     - that sounds good
-#     - correct
-
-# - intent: deny
-#   examples: |
-#     - no
-#     - n
-#     - never
-#     - I don't think so
-#     - don't like that
-#     - no way
-#     - not really
-
-# - intent: mood_great
-#   examples: |
-#     - perfect
-#     - great
-#     - amazing
-#     - feeling like a king
-#     - wonderful
-#     - I am feeling very good
-#     - I am great
-#     - I am amazing
-#     - I am going to save the world
-#     - super stoked
-#     - extremely good
-#     - so so perfect
-#     - so good
-#     - so perfect
-
-# - intent: mood_unhappy
-#   examples: |
-#     - my day was horrible
-#     - I am sad
-#     - I don't feel very well
-#     - I am disappointed
-#     - super sad
-#     - I'm so sad
-#     - sad
-#     - very sad
-#     - unhappy
-#     - not good
-#     - not very good
-#     - extremly sad
-#     - so saad
-#     - so sad
-
-# - intent: bot_challenge
-#   examples: |
-#     - are you a bot?
-#     - are you a human?
-#     - am I talking to a bot?
-#     - am I talking to a human?
+  # - intent: confused
+  #   examples: |
+  #     - I'm a bit confused, can you clarify?
+  #     - I didn't understand that, could you explain again?
+  #     - I'm not sure what you mean, can you elaborate?
+  #     - It's not clear to me, can you provide more information?
+  #     - I'm confused, could you simplify that?
+  #     - I didn't get that, could you rephrase?
+  #     - I'm a bit lost, can you help me understand?
+  #     - I'm having trouble understanding, can you clarify?
+  #     - I'm not sure I follow, can you explain once more?
+  #     - I'm confused, can you break it down for me?
