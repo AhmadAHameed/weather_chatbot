@@ -5,39 +5,33 @@ intents:
   - get_weather_realtime
   - get_weather_forecast
   - get_weather_history
-  - confused
   - thanks
   - goodbye
   - bot_challenge
+  # - confused
 
 entities:
   - location
   - time
 
-responses:
-  utter_greet:
-  - text: "Hello, how are you?"
+# responses:
+#   utter_greet:
+#   - text: "Hello, how are you?"
 
-  utter_get_realtime_weather:
-  - text: "To be read from online API"
+#   utter_get_weather_realtime:
+#   - text: "To be read from online API"
 
-  utter_get_forecast_weather:
-  - text: "To be read from online API"
+#   utter_get_weather_forecast:
+#   - text: "To be read from online API"
 
-  utter_location_realtime_weather:
-  - text: "Get realtime weather using inputs"
+#   utter_goodbye:
+#   - text: "Goodbye, I wish you a happy day"
 
-  utter_location_forecast_weather:
-  - text: "Get forecast weather using inputs"
+#   utter_thanks:
+#   - text: "Pleased to help ^-^"
 
-  utter_goodbye:
-  - text: "Goodbye, I wish you a happy day"
-
-  utter_thanks:
-  - text: "Pleased to help ^-^"
-
-  utter_iam_bot:
-  - text: "I am a bot ^-^"
+#   utter_iam_bot:
+#   - text: "I am a bot ^-^"
 
 # session_config:
 #   session_expiration_time: 60

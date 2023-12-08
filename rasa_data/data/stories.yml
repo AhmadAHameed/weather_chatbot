@@ -1,59 +1,23 @@
-version: "3.1"
-
-stories:
-- story: ask about realtime weather
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: get_realtime_weather
-  - action: utter_get_realtime_weather
-  - intent: location
-  - action: utter_location_realtime_weather
-
-- story: ask about forecasting weather
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: get_forecast_weather
-  - action: utter_get_forecast_weather
-  - intent: location
-  - action: utter_location_forecast_weather
-
-- story: thanks and goodbye
-  steps:
-  - intent: thanks
-  - action: utter_thanks
-  - intent: goodbye
-  - action: utter_goodbye
-
-
 # version: "3.1"
 
 # stories:
-
-# - story: happy path
+# - story: ask about realtime weather
 #   steps:
 #   - intent: greet
 #   - action: utter_greet
-#   - intent: mood_great
-#   - action: utter_happy
+#   - intent: get_weather_realtime
+#   - action: utter_get_weather_realtime
 
-# - story: sad path 1
+# - story: ask about forecasting weather
 #   steps:
 #   - intent: greet
 #   - action: utter_greet
-#   - intent: mood_unhappy
-#   - action: utter_cheer_up
-#   - action: utter_did_that_help
-#   - intent: affirm
-#   - action: utter_happy
+#   - intent: get_weather_forecast
+#   - action: utter_weather_get_forecast
 
-# - story: sad path 2
+# - story: thanks and goodbye
 #   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_unhappy
-#   - action: utter_cheer_up
-#   - action: utter_did_that_help
-#   - intent: deny
+#   - intent: thanks
+#   - action: utter_thanks
+#   - intent: goodbye
 #   - action: utter_goodbye
