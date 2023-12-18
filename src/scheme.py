@@ -2,7 +2,9 @@ from pydantic import BaseModel
 
 
 class Message(BaseModel):
-    text: str
+    message: str
 
-class City(BaseModel):
-    text: str
+
+class Location(BaseModel):
+    location: str
+    # text: str

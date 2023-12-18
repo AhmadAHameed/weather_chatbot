@@ -1,7 +1,8 @@
 from fastapi import FastAPI
-from src.scheme import Message, City
+from src.scheme import Message, Location
 from src import api_requests
 from src import resources
+from uvicorn import run
 
 app = FastAPI()
 
@@ -17,17 +18,19 @@ async def parse_message(message: Message):
     """"""
     result = "Not Found"
 
-    if message.text != "":
-        result = await resources.parse_message(message.text)
-        
+    if message.message != "":
+        result = await resources.parse_message(message.message)
+
     return {"result": result}
 
 
-@app.post("/get_weather_now")
-async def get_weather_now(city: City):
+@app.post("/get_weather_realtime")
+async def get_weather_realtime(location: Location, language="en"):
     """"""
-    results = ""
-    response = api_requests.get_weather_now(city)
-    if response.status_code == 200:
-        results = response.text
-    return {"resulst": results}
+    result = api_requests.get_weather_realtime(location.location, language)
+
+    return result
+
+
+if __name__ == "__main__":
+    run("main:app", host="127.0.0.1", port=8000, reload=True)
